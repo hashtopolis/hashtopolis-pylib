@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hashtopolis-pylib"
+version = "0.1.0"
+description = "Python implementation to be used to talk to the API of Hashtopolis."
+readme = "README.md"
+license = {text = "GPL-3.0"}
+authors = [{name = "Hashtopolis"}]
+keywords = ["hashtopolis"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+    "Operating System :: OS Independent",
+]
+
+dependencies = []
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/hashtopolis/hashtopolis-pylib"
+Repository = "https://github.com/hashtopolis/hashtopolis-pylib.git"
