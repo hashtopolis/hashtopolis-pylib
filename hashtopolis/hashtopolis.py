@@ -1101,6 +1101,13 @@ class Helper(HashtopolisConnector):
         self.validate_status_code(r, [200], "getCracksPerDay failed")
         return r.json()['meta']
 
+    def get_completed_count(self):
+        self.authenticate()
+        uri = self._api_endpoint + self._model_uri + 'getCompletedCount'
+        r = requests.get(uri, headers=self._headers)
+        self.validate_status_code(r, [200], "getCompletedCount failed")
+        return r.json()['data']
+
     def rebuild_chunk_cache(self):
         response = self._helper_request("rebuildChunkCache", {})
         return response['meta']
