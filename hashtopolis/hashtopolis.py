@@ -1110,6 +1110,14 @@ class Helper(HashtopolisConnector):
         self.validate_status_code(r, [200], "getCompletedCount failed")
         return r.json()['data']
 
+    def get_global_config(self):
+        self.authenticate()
+        uri = self._api_endpoint + self._model_uri + 'getGlobalConfig'
+        r = requests.get(uri, headers=self._headers)
+        self.validate_status_code(r, [200], "getGlobalConfig failed")
+        data = r.json()['data']
+        return [Config(**item) for item in data]
+
     def rebuild_chunk_cache(self):
         response = self._helper_request("rebuildChunkCache", {})
         return response['meta']
