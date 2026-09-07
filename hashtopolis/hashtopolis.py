@@ -1127,7 +1127,7 @@ class Helper(HashtopolisConnector):
             'fileId': file.id,
         }
         response = self._helper_request("recountFileLines", payload)
-        return File(**response['meta'])
+        return File(**response['data'])
 
     def rescan_global_files(self):
         response = self._helper_request("rescanGlobalFiles", {})
